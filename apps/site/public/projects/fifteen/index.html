@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A keyboard-friendly fifteen puzzle by SovereignSteak.">
+    <meta name="theme-color" content="#130f0d">
+    <title>Fifteen Puzzle · SovereignSteak</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/projects/fifteen/puzzle.css">
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="puzzle-shell">
+      <header class="puzzle-header">
+        <a href="/projects/" aria-label="Back to projects">← Projects</a>
+        <span class="brand-mark__monogram">SS</span>
+      </header>
+      <section class="puzzle-app" aria-labelledby="puzzle-title">
+        <div class="puzzle-title-row">
+          <div><p class="eyebrow">A perennial favorite</p><h1 id="puzzle-title">Fifteen<span>puzzle.</span></h1></div>
+          <div class="puzzle-stats" aria-live="polite"><span>Moves <strong id="moves">0</strong></span><span>Time <strong id="time">0:00</strong></span></div>
+        </div>
+        <div class="puzzle-toolbar">
+          <div class="mode-switch" role="group" aria-label="Tile appearance">
+            <button class="active" type="button" data-mode="numbers" aria-pressed="true">Numbers</button>
+            <button type="button" data-mode="image" aria-pressed="false">Logo</button>
+          </div>
+          <div class="puzzle-actions">
+            <button id="cheat-toggle" class="cheat-toggle" type="button" aria-pressed="false">Cheat: off</button>
+            <button id="new-game" class="new-game" type="button">New game</button>
+          </div>
+        </div>
+        <div id="board" class="puzzle-board numbers" role="group" aria-label="Fifteen puzzle board"></div>
+        <p id="puzzle-status" class="puzzle-message" role="status" aria-live="polite">Move tiles with WASD or arrow keys. Click any aligned tile to slide its row or column.</p>
+      </section>
+    </main>
+    <script src="/projects/fifteen/puzzle.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+{
+  "witnesses_checked": 4,
+  "failures": [],
+  "groebner_checked": 3,
+  "records": [
+    {
+      "row": 0,
+      "base": "nums_full_x",
+      "f4_total_degree": 12,
+      "f4_terms": 125,
+      "cpu_seconds": 0.02477683899999983,
+      "basis_size": 3,
+      "max_basis_degree": 3,
+      "unit_ideal": false
+    },
+    {
+      "row": 1,
+      "base": "historical",
+      "f4_total_degree": 12,
+      "f4_terms": 125,
+      "cpu_seconds": 0.008782018000000003,
+      "basis_size": 3,
+      "max_basis_degree": 3,
+      "unit_ideal": false
+    },
+    {
+      "row": 1,
+      "base": "random",
+      "f4_total_degree": 12,
+      "f4_terms": 125,
+      "cpu_seconds": 0.007833066999999971,
+      "basis_size": 4,
+      "max_basis_degree": 2,
+      "unit_ideal": false
+    }
+  ]
+}

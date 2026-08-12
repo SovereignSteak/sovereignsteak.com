@@ -1,0 +1,87 @@
+{
+  "input": "data/corpus.jsonl",
+  "sha256": "a12f607eb7465417056417ad2048906690a4c197e0d8d4787a051baa5706c052",
+  "curves": 2000,
+  "bit_range": [
+    30,
+    80
+  ],
+  "comparisons": [
+    {
+      "left": "historical",
+      "right": "random",
+      "metric": "x_bits",
+      "pairs": 2000,
+      "mean_paired_difference": -0.0125,
+      "median_paired_difference": 0.0,
+      "sign_flip_p_value": 0.7868213178682132,
+      "trials": 10000
+    },
+    {
+      "left": "historical",
+      "right": "random",
+      "metric": "min_x_popcount",
+      "pairs": 2000,
+      "mean_paired_difference": 0.064,
+      "median_paired_difference": 0.0,
+      "sign_flip_p_value": 0.1787821217878212,
+      "trials": 10000
+    },
+    {
+      "left": "historical",
+      "right": "random",
+      "metric": "min_centered_x",
+      "pairs": 2000,
+      "mean_paired_difference": -0.001088112586991139,
+      "median_paired_difference": -0.015548635260316246,
+      "sign_flip_p_value": 0.9853014698530147,
+      "trials": 10000
+    },
+    {
+      "left": "nums_full_x",
+      "right": "random",
+      "metric": "x_bits",
+      "pairs": 2000,
+      "mean_paired_difference": 1.378,
+      "median_paired_difference": 1.0,
+      "sign_flip_p_value": 9.999000099990002e-05,
+      "trials": 10000
+    },
+    {
+      "left": "nums_full_x",
+      "right": "random",
+      "metric": "min_x_popcount",
+      "pairs": 2000,
+      "mean_paired_difference": -0.029,
+      "median_paired_difference": 0.0,
+      "sign_flip_p_value": 0.5592440755924407,
+      "trials": 10000
+    },
+    {
+      "left": "nums_full_x",
+      "right": "random",
+      "metric": "min_centered_x",
+      "pairs": 2000,
+      "mean_paired_difference": 0.018263678403817648,
+      "median_paired_difference": 0.04714073737213553,
+      "sign_flip_p_value": 0.7523247675232477,
+      "trials": 10000
+    }
+  ],
+  "scaling_log2_min_centered_x_per_field_bit": {
+    "historical": 1.0026344575517527,
+    "random": 0.9982695903694598,
+    "nums_full_x": 1.0003626029356996
+  },
+  "cross_curve": {
+    "unique_historical_hx": 2000,
+    "duplicate_count": 0,
+    "interpretation": "modular reduction of one public core intentionally couples historical-style scans"
+  },
+  "structural_findings": {
+    "division_polynomials": "Identical across all bases on a fixed curve; base comparison is inapplicable. psi_3 has two nonzero terms for every a=0 curve.",
+    "glv_lattice": "Depends only on (n, lambda), not the chosen nonzero base in a prime-order group; no base-specific correlation exists at this level.",
+    "summation_systems": "Base affects the target constants, so timings can fluctuate, but no CAS was available; no Groebner timing claim is made.",
+    "orbit_scan": "Exact k<=32 and all three GLV images; paired statistics reported above."
+  }
+}

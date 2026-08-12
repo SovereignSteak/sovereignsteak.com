@@ -1,0 +1,54 @@
+{
+  "shared_core": "8ce563f89a0ed9414f5aa28ad0d96d6795f9c6",
+  "shared_core_bits": 152,
+  "results": [
+    {
+      "name": "secp160k1",
+      "hx": "48ce563f89a0ed9414f5aa28ad0d96d6795f9c62",
+      "hy": "bcda9d4acd74573f55010aef6c7b4b1ac4daa8ca",
+      "core_offset_hex_digits": 1,
+      "beta": "9ba48cba5ebcb9b6bd33b92830b2a2e0e192f10a",
+      "lambda": "c39c6c3b3a36d7701b9c71a1f5804ae5d0003f4",
+      "phi_gx": "95947a1c3fde5e16c38ef6f5ff98df1842fddee1",
+      "phi_gy": "938cf935318fdced6bc28286531733c3f03c4fee",
+      "phi_hx": "59082c763d46aa61484103e276aa3e951a3a919a",
+      "phi_hy": "bcda9d4acd74573f55010aef6c7b4b1ac4daa8ca"
+    },
+    {
+      "name": "secp192k1",
+      "hx": "554123b78ce563f89a0ed9414f5aa28ad0d96d6795f9c66",
+      "hy": "90755fc93ea4b13027fc6c8f337d92c6d00090fad0e8b2c6",
+      "core_offset_hex_digits": 8,
+      "beta": "447a96e6c647963e2f7809feaab46947f34b0aa3ca0bba74",
+      "lambda": "c27b0d93eddc7284b0c2ae9813318686dbb7a0ea73692cdb",
+      "phi_gx": "42edeeac64cba682551ad5b4cab273306f767c75b6204bea",
+      "phi_gy": "9b2f2f6d9c5628a7844163d015be86344082aa88d95e2f9d",
+      "phi_hx": "2c5bda6c76fa25e782d695196e9d93f7767949914a261a6c",
+      "phi_hy": "90755fc93ea4b13027fc6c8f337d92c6d00090fad0e8b2c6"
+    },
+    {
+      "name": "secp224k1",
+      "hx": "3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63",
+      "hy": "f7d94781b93cd62422e8a24472ffda23418d7c0e25ca89ed909f9ce4",
+      "core_offset_hex_digits": 3,
+      "beta": "1f178ffa4b17c89e6f73aece2aad57af4c0a748b63c830947b27e04",
+      "lambda": "9f232defb3b343f41911103d422bcc75342913534b55766d0a016a6e",
+      "phi_gx": "ba9d8b1be07ca7e2251a53112d63f306629c681c3a57c5e8641c5cdf",
+      "phi_gy": "7e089fed7fba344282cafbd6f7e319f7c0b0bd59e2ca4bdb556d61a5",
+      "phi_hx": "d24339d496ed5ea4e555ffca16d505851455f13b00fd0bba3b9c240",
+      "phi_hy": "f7d94781b93cd62422e8a24472ffda23418d7c0e25ca89ed909f9ce4"
+    },
+    {
+      "name": "secp256k1",
+      "hx": "3b78ce563f89a0ed9414f5aa28ad0d96d6795f9c63",
+      "hy": "c0c686408d517dfd67c2367651380d00d126e4229631fd03f8ff35eef1a61e3c",
+      "core_offset_hex_digits": 3,
+      "beta": "7ae96a2b657c07106e64479eac3434e99cf0497512f58995c1396c28719501ee",
+      "lambda": "5363ad4cc05c30e0a5261c028812645a122e22ea20816678df02967c1b23bd72",
+      "phi_gx": "bcace2e99da01887ab0102b696902325872844067f15e98da7bba04400b88fcb",
+      "phi_gy": "483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8",
+      "phi_hx": "1b7b24bfec17f17cfad4ed5d26f3ba3f2ecde9516100d16dbfa3986c27223893",
+      "phi_hy": "c0c686408d517dfd67c2367651380d00d126e4229631fd03f8ff35eef1a61e3c"
+    }
+  ]
+}

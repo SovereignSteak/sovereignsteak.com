@@ -1,0 +1,40 @@
+{
+  "witnesses_checked": 52,
+  "failures": [],
+  "groebner_checked": 3,
+  "records": [
+    {
+      "row": 0,
+      "base": "random",
+      "f4_total_degree": 12,
+      "f4_terms": 125,
+      "timeout": false,
+      "cpu_seconds": 0.024583704999999956,
+      "basis_size": 3,
+      "max_basis_degree": 3,
+      "unit_ideal": false
+    },
+    {
+      "row": 0,
+      "base": "nums_full_x",
+      "f4_total_degree": 12,
+      "f4_terms": 125,
+      "timeout": false,
+      "cpu_seconds": 0.008093100000000186,
+      "basis_size": 3,
+      "max_basis_degree": 3,
+      "unit_ideal": false
+    },
+    {
+      "row": 1,
+      "base": "historical",
+      "f4_total_degree": 12,
+      "f4_terms": 125,
+      "timeout": false,
+      "cpu_seconds": 0.008884608000000016,
+      "basis_size": 3,
+      "max_basis_degree": 3,
+      "unit_ideal": false
+    }
+  ]
+}

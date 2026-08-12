@@ -1,0 +1,33 @@
+{
+  "design_version": "high-value-f4-v1",
+  "status": "preregistered-before-generation",
+  "curves": 1000,
+  "field_bits": [30, 31, 32, 33, 34, 35, 36],
+  "curve_family": "prime-order cofactor-one j=0, p=u^2+3v^2, small b",
+  "bases_per_curve": {
+    "historical_style": 1,
+    "full_x_nums": 1,
+    "exact_uniform_controls": 8
+  },
+  "relation": "three factor-base x coordinates; Semaev f4",
+  "factor_base_sizes": [12, 16, 24, 32],
+  "orbit_limit": 500000,
+  "primary_comparison": "historical_style versus within-curve mean of eight controls",
+  "primary_outcomes": ["relation incidence", "right-censored first relation index"],
+  "tests": {
+    "incidence": "within-curve label-exchangeability permutation",
+    "capped_index": "within-curve label-exchangeability permutation",
+    "uncertainty": "curve-cluster bootstrap 95% intervals",
+    "trials": 100000
+  },
+  "singular": {
+    "execution": "one external process per ideal",
+    "wall_timeout_seconds": 60,
+    "memory_limit_mib": 2048,
+    "base_labels_blinded": true
+  },
+  "sha1_rainbow_tables": {
+    "included": false,
+    "reason": "unknown seed domain, serialization, truncation, and affix rule make generic-table misses non-evidentiary"
+  }
+}

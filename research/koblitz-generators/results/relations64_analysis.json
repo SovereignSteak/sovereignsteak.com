@@ -1,0 +1,189 @@
+{
+  "records": 600,
+  "matched_curves": 200,
+  "comparisons": [
+    {
+      "left": "historical",
+      "right": "random",
+      "pairs": 200,
+      "left_successes": 66,
+      "right_successes": 70,
+      "discordant_left_only": 17,
+      "discordant_right_only": 21,
+      "mcnemar_exact_p": 0.6271025701571489,
+      "mean_capped_difference": 4068.9,
+      "paired_sign_flip_p": 0.6879031209687904,
+      "sign_flip_trials": 100000
+    },
+    {
+      "left": "nums_full_x",
+      "right": "random",
+      "pairs": 200,
+      "left_successes": 64,
+      "right_successes": 70,
+      "discordant_left_only": 18,
+      "discordant_right_only": 24,
+      "mcnemar_exact_p": 0.44079906734259566,
+      "mean_capped_difference": 16852.005,
+      "paired_sign_flip_p": 0.15191848081519185,
+      "sign_flip_trials": 100000
+    }
+  ],
+  "successes_by_bits": {
+    "30": {
+      "historical": {
+        "total": 19,
+        "successes": 19
+      },
+      "random": {
+        "total": 19,
+        "successes": 18
+      },
+      "nums_full_x": {
+        "total": 19,
+        "successes": 18
+      }
+    },
+    "31": {
+      "historical": {
+        "total": 19,
+        "successes": 15
+      },
+      "random": {
+        "total": 19,
+        "successes": 18
+      },
+      "nums_full_x": {
+        "total": 19,
+        "successes": 18
+      }
+    },
+    "32": {
+      "historical": {
+        "total": 18,
+        "successes": 13
+      },
+      "random": {
+        "total": 18,
+        "successes": 15
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 12
+      }
+    },
+    "33": {
+      "historical": {
+        "total": 18,
+        "successes": 10
+      },
+      "random": {
+        "total": 18,
+        "successes": 5
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 4
+      }
+    },
+    "34": {
+      "historical": {
+        "total": 18,
+        "successes": 2
+      },
+      "random": {
+        "total": 18,
+        "successes": 6
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 3
+      }
+    },
+    "35": {
+      "historical": {
+        "total": 18,
+        "successes": 5
+      },
+      "random": {
+        "total": 18,
+        "successes": 4
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 5
+      }
+    },
+    "36": {
+      "historical": {
+        "total": 18,
+        "successes": 1
+      },
+      "random": {
+        "total": 18,
+        "successes": 1
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 2
+      }
+    },
+    "37": {
+      "historical": {
+        "total": 18,
+        "successes": 1
+      },
+      "random": {
+        "total": 18,
+        "successes": 1
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 1
+      }
+    },
+    "38": {
+      "historical": {
+        "total": 18,
+        "successes": 0
+      },
+      "random": {
+        "total": 18,
+        "successes": 1
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 1
+      }
+    },
+    "39": {
+      "historical": {
+        "total": 18,
+        "successes": 0
+      },
+      "random": {
+        "total": 18,
+        "successes": 1
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 0
+      }
+    },
+    "40": {
+      "historical": {
+        "total": 18,
+        "successes": 0
+      },
+      "random": {
+        "total": 18,
+        "successes": 0
+      },
+      "nums_full_x": {
+        "total": 18,
+        "successes": 0
+      }
+    }
+  },
+  "censoring_note": "relation_k=None is right-censored at the common per-record limit; capped tests retain it as limit+1."
+}

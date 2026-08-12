@@ -1,0 +1,12 @@
+{
+  "name": "sovereignsteak-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix apps/site run dev",
+    "check": "npm --prefix apps/site run check && npm --prefix apps/calc test && npm --prefix apps/calc run check && npm run test:research",
+    "deploy": "npm --prefix apps/site run deploy",
+    "deploy:calc": "npm --prefix apps/calc run deploy",
+    "test:research": "cd research/koblitz-generators && python3 -m unittest discover -s tests -v"
+  }
+}

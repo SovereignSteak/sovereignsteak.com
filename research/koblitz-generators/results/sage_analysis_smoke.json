@@ -1,0 +1,457 @@
+{
+  "sage_version": "SageMath version 10.9, Release Date: 2026-05-04",
+  "corpus_sha256": "a12f607eb7465417056417ad2048906690a4c197e0d8d4787a051baa5706c052",
+  "sec2": [
+    {
+      "name": "secp160k1",
+      "sage_order": "1461501637330902918203686915170869725397159163571",
+      "declared_order": "1461501637330902918203686915170869725397159163571",
+      "order_matches": true,
+      "generator_order_matches": true,
+      "double_half_matches": true
+    },
+    {
+      "name": "secp192k1",
+      "sage_order": "6277101735386680763835789423061264271957123915200845512077",
+      "declared_order": "6277101735386680763835789423061264271957123915200845512077",
+      "order_matches": true,
+      "generator_order_matches": true,
+      "double_half_matches": true
+    },
+    {
+      "name": "secp224k1",
+      "sage_order": "26959946667150639794667015087019640346510327083120074548994958668279",
+      "declared_order": "26959946667150639794667015087019640346510327083120074548994958668279",
+      "order_matches": true,
+      "generator_order_matches": true,
+      "double_half_matches": true
+    },
+    {
+      "name": "secp256k1",
+      "sage_order": "115792089237316195423570985008687907852837564279074904382605163141518161494337",
+      "declared_order": "115792089237316195423570985008687907852837564279074904382605163141518161494337",
+      "order_matches": true,
+      "generator_order_matches": true,
+      "double_half_matches": true
+    }
+  ],
+  "corpus_validation": {
+    "checked": 10,
+    "failures": []
+  },
+  "division_polynomials": {
+    "curves": 3,
+    "max_k": 8,
+    "records": [
+      {
+        "row": 0,
+        "bits": 30,
+        "b": 7,
+        "k": 3,
+        "degree": 4,
+        "term_count": 2,
+        "factor_degrees": [
+          1,
+          3
+        ],
+        "min_factor_degree": 1
+      },
+      {
+        "row": 0,
+        "bits": 30,
+        "b": 7,
+        "k": 4,
+        "degree": 9,
+        "term_count": 4,
+        "factor_degrees": [
+          3,
+          6
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 0,
+        "bits": 30,
+        "b": 7,
+        "k": 5,
+        "degree": 12,
+        "term_count": 5,
+        "factor_degrees": [
+          6,
+          6
+        ],
+        "min_factor_degree": 6
+      },
+      {
+        "row": 0,
+        "bits": 30,
+        "b": 7,
+        "k": 6,
+        "degree": 19,
+        "term_count": 7,
+        "factor_degrees": [
+          1,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "min_factor_degree": 1
+      },
+      {
+        "row": 0,
+        "bits": 30,
+        "b": 7,
+        "k": 7,
+        "degree": 24,
+        "term_count": 9,
+        "factor_degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 0,
+        "bits": 30,
+        "b": 7,
+        "k": 8,
+        "degree": 33,
+        "term_count": 12,
+        "factor_degrees": [
+          3,
+          6,
+          12,
+          12
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "b": 7,
+        "k": 3,
+        "degree": 4,
+        "term_count": 2,
+        "factor_degrees": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "min_factor_degree": 1
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "b": 7,
+        "k": 4,
+        "degree": 9,
+        "term_count": 4,
+        "factor_degrees": [
+          3,
+          3,
+          3
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "b": 7,
+        "k": 5,
+        "degree": 12,
+        "term_count": 5,
+        "factor_degrees": [
+          12
+        ],
+        "min_factor_degree": 12
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "b": 7,
+        "k": 6,
+        "degree": 19,
+        "term_count": 7,
+        "factor_degrees": [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "min_factor_degree": 1
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "b": 7,
+        "k": 7,
+        "degree": 24,
+        "term_count": 9,
+        "factor_degrees": [
+          3,
+          3,
+          6,
+          6,
+          6
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "b": 7,
+        "k": 8,
+        "degree": 33,
+        "term_count": 12,
+        "factor_degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "b": 2,
+        "k": 3,
+        "degree": 4,
+        "term_count": 2,
+        "factor_degrees": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "min_factor_degree": 1
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "b": 2,
+        "k": 4,
+        "degree": 9,
+        "term_count": 4,
+        "factor_degrees": [
+          3,
+          6
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "b": 2,
+        "k": 5,
+        "degree": 12,
+        "term_count": 5,
+        "factor_degrees": [
+          4,
+          4,
+          4
+        ],
+        "min_factor_degree": 4
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "b": 2,
+        "k": 6,
+        "degree": 19,
+        "term_count": 7,
+        "factor_degrees": [
+          1,
+          1,
+          1,
+          1,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "min_factor_degree": 1
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "b": 2,
+        "k": 7,
+        "degree": 24,
+        "term_count": 9,
+        "factor_degrees": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3
+        ],
+        "min_factor_degree": 3
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "b": 2,
+        "k": 8,
+        "degree": 33,
+        "term_count": 12,
+        "factor_degrees": [
+          3,
+          6,
+          12,
+          12
+        ],
+        "min_factor_degree": 3
+      }
+    ],
+    "low_degree_factor_records": 6,
+    "interpretation": "Each record is identical for historical/random/NUMS bases on its curve."
+  },
+  "semaev_groebner": {
+    "curves": 3,
+    "factor_base_size": 32,
+    "relation_search_limit": 200000,
+    "records": [
+      {
+        "row": 0,
+        "bits": 30,
+        "base": "historical",
+        "relation_k": 29009,
+        "censored_at": 200000,
+        "cpu_seconds": 0.022321021999999857,
+        "basis_size": 2,
+        "max_basis_degree": 2,
+        "ordered_x_pair_solutions": 2
+      },
+      {
+        "row": 0,
+        "bits": 30,
+        "base": "random",
+        "relation_k": null,
+        "censored_at": 200000
+      },
+      {
+        "row": 0,
+        "bits": 30,
+        "base": "nums_full_x",
+        "relation_k": null,
+        "censored_at": 200000
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "base": "historical",
+        "relation_k": 55322,
+        "censored_at": 200000,
+        "cpu_seconds": 0.007203138999999581,
+        "basis_size": 2,
+        "max_basis_degree": 2,
+        "ordered_x_pair_solutions": 2
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "base": "random",
+        "relation_k": 123452,
+        "censored_at": 200000,
+        "cpu_seconds": 0.005436105999999441,
+        "basis_size": 2,
+        "max_basis_degree": 2,
+        "ordered_x_pair_solutions": 2
+      },
+      {
+        "row": 1,
+        "bits": 31,
+        "base": "nums_full_x",
+        "relation_k": 162095,
+        "censored_at": 200000,
+        "cpu_seconds": 0.005309244999999407,
+        "basis_size": 2,
+        "max_basis_degree": 2,
+        "ordered_x_pair_solutions": 2
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "base": "historical",
+        "relation_k": 25971,
+        "censored_at": 200000,
+        "cpu_seconds": 0.008105548000003182,
+        "basis_size": 2,
+        "max_basis_degree": 2,
+        "ordered_x_pair_solutions": 2
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "base": "random",
+        "relation_k": 33801,
+        "censored_at": 200000,
+        "cpu_seconds": 0.006503590000001225,
+        "basis_size": 2,
+        "max_basis_degree": 2,
+        "ordered_x_pair_solutions": 2
+      },
+      {
+        "row": 2,
+        "bits": 32,
+        "base": "nums_full_x",
+        "relation_k": null,
+        "censored_at": 200000
+      }
+    ],
+    "system": "<f3(x1,x2,xQ), product(x1-B), product(x2-B)> in GF(p)[x1,x2], lex"
+  },
+  "semaev_summary": {
+    "historical": {
+      "relations_found": 3,
+      "relations_censored": 0,
+      "median_relation_k_found": 29009,
+      "median_cpu_seconds": 0.008105548000003182,
+      "mean_cpu_seconds": 0.012543236333334207,
+      "mean_max_basis_degree": 2.0
+    },
+    "random": {
+      "relations_found": 2,
+      "relations_censored": 1,
+      "median_relation_k_found": 78626.5,
+      "median_cpu_seconds": 0.005969848000000333,
+      "mean_cpu_seconds": 0.005969848000000333,
+      "mean_max_basis_degree": 2.0
+    },
+    "nums_full_x": {
+      "relations_found": 1,
+      "relations_censored": 2,
+      "median_relation_k_found": 162095,
+      "median_cpu_seconds": 0.005309244999999407,
+      "mean_cpu_seconds": 0.005309244999999407,
+      "mean_max_basis_degree": 2.0
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "exact_lcs_hex": "8ce563f89a0ed9414f5aa28ad0d96d6795f9c6",
+  "exact_lcs_bits": 152,
+  "decompositions": [
+    {
+      "name": "secp160k1",
+      "prefix": "4",
+      "core": "8ce563f89a0ed9414f5aa28ad0d96d6795f9c6",
+      "suffix": "2",
+      "hx_bits": 159
+    },
+    {
+      "name": "secp192k1",
+      "prefix": "554123b7",
+      "core": "8ce563f89a0ed9414f5aa28ad0d96d6795f9c6",
+      "suffix": "6",
+      "hx_bits": 187
+    },
+    {
+      "name": "secp224k1",
+      "prefix": "3b7",
+      "core": "8ce563f89a0ed9414f5aa28ad0d96d6795f9c6",
+      "suffix": "3",
+      "hx_bits": 166
+    },
+    {
+      "name": "secp256k1",
+      "prefix": "3b7",
+      "core": "8ce563f89a0ed9414f5aa28ad0d96d6795f9c6",
+      "suffix": "3",
+      "hx_bits": 166
+    }
+  ],
+  "secp224k1_equals_secp256k1_hx": true,
+  "bounded_sha1_test": {
+    "labels": [
+      "SECG",
+      "SEC2",
+      "Koblitz",
+      "generator",
+      "half-generator",
+      "secp160k1",
+      "secp192k1",
+      "secp224k1",
+      "secp256k1"
+    ],
+    "counters_per_label": 100000,
+    "encodings": [
+      "label||u32be",
+      "label||decimal",
+      "u32be||label"
+    ],
+    "hits": []
+  },
+  "ranking": [
+    {
+      "rank": 1,
+      "recipe": "fixed 152-bit hexadecimal core plus curve-specific short prefix/suffix, lift, then double",
+      "fit": "exact for all four",
+      "caveat": "descriptive reconstruction; selection rule for affixes is unknown"
+    },
+    {
+      "rank": 2,
+      "recipe": "reuse one low-height Hx candidate across sizes, scan nearby affixes until lift/order tests pass, then double",
+      "fit": "explains literal equality at 224/256 and low bit length",
+      "caveat": "many scan orders fit retrospectively"
+    },
+    {
+      "rank": 3,
+      "recipe": "short seed/counter through SHA-1 or truncated SHA-1, then affix/lift/double",
+      "fit": "not reproduced in bounded declared search",
+      "caveat": "unbounded seed space makes this unfalsifiable without provenance"
+    }
+  ]
+}

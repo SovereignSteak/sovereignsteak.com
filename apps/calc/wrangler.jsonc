@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sovereignsteak-calc",
+  "compatibility_date": "2026-08-07",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  },
+  "routes": [
+    {
+      "pattern": "calc.sovereignsteak.com",
+      "custom_domain": true
+    }
+  ]
+}

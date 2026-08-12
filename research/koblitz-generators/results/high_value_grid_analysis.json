@@ -1,0 +1,71 @@
+{
+  "factor_base_sizes": [
+    12,
+    16,
+    24,
+    32
+  ],
+  "curves": 1000,
+  "controls_per_curve": 8,
+  "permutation_rule": "one pseudo-target label per curve, held fixed across all settings",
+  "analyses": [
+    {
+      "target": "historical",
+      "outcomes": [
+        {
+          "outcome": "success",
+          "target_mean": 0.55275,
+          "control_mean": 0.54690625,
+          "mean_difference": 0.00584375,
+          "cluster_bootstrap_95_ci": [
+            -0.00953125,
+            0.02121875
+          ],
+          "joint_exchangeability_p": 0.4658453415465845,
+          "mean_rank_across_settings": 5.023375
+        },
+        {
+          "outcome": "capped_relation_index",
+          "target_mean": 300857.0155,
+          "control_mean": 306146.6541875,
+          "mean_difference": -5289.6386875,
+          "cluster_bootstrap_95_ci": [
+            -11396.43428671875,
+            777.369111718749
+          ],
+          "joint_exchangeability_p": 0.08727912720872791,
+          "mean_rank_across_settings": 4.928375
+        }
+      ]
+    },
+    {
+      "target": "nums_full_x",
+      "outcomes": [
+        {
+          "outcome": "success",
+          "target_mean": 0.5485,
+          "control_mean": 0.54690625,
+          "mean_difference": 0.00159375,
+          "cluster_bootstrap_95_ci": [
+            -0.01421875,
+            0.01753203124999982
+          ],
+          "joint_exchangeability_p": 0.8475015249847502,
+          "mean_rank_across_settings": 5.006375
+        },
+        {
+          "outcome": "capped_relation_index",
+          "target_mean": 302555.552,
+          "control_mean": 306146.6541875,
+          "mean_difference": -3591.1021875,
+          "cluster_bootstrap_95_ci": [
+            -9821.89735390625,
+            2605.7565242187475
+          ],
+          "joint_exchangeability_p": 0.24835751642483575,
+          "mean_rank_across_settings": 4.951
+        }
+      ]
+    }
+  ]
+}

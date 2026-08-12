@@ -1,0 +1,18 @@
+{
+  "witnesses_checked": 52,
+  "failures": [],
+  "groebner_checked": 1,
+  "records": [
+    {
+      "row": 0,
+      "base": "random",
+      "f4_total_degree": 12,
+      "f4_terms": 125,
+      "timeout": false,
+      "cpu_seconds": 0.024635819999999864,
+      "basis_size": 3,
+      "max_basis_degree": 3,
+      "unit_ideal": false
+    }
+  ]
+}

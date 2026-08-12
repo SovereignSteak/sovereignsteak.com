@@ -1,0 +1,66 @@
+{
+  "input": "results/high_value_b24.jsonl",
+  "records": 10000,
+  "matched_curves": 1000,
+  "controls_per_curve": 8,
+  "trials": 100000,
+  "analyses": [
+    {
+      "target": "historical",
+      "curves": 1000,
+      "success": {
+        "target_mean": 0.669,
+        "control_mean": 0.6615,
+        "mean_difference": 0.0075,
+        "cluster_bootstrap_95_ci": [
+          -0.015125,
+          0.03
+        ],
+        "exchangeability_p": 0.5257347426525735,
+        "mean_target_rank_among_9": 5.03,
+        "expected_null_rank": 5.0
+      },
+      "capped_relation_index": {
+        "target_mean": 253318.149,
+        "control_mean": 259422.01075,
+        "mean_difference": -6103.86175,
+        "cluster_bootstrap_95_ci": [
+          -15030.3872625,
+          2824.0606624999878
+        ],
+        "exchangeability_p": 0.17342826571734282,
+        "mean_target_rank_among_9": 4.899,
+        "expected_null_rank": 5.0
+      }
+    },
+    {
+      "target": "nums_full_x",
+      "curves": 1000,
+      "success": {
+        "target_mean": 0.679,
+        "control_mean": 0.6615,
+        "mean_difference": 0.0175,
+        "cluster_bootstrap_95_ci": [
+          -0.00525,
+          0.040375
+        ],
+        "exchangeability_p": 0.13193868061319386,
+        "mean_target_rank_among_9": 5.07,
+        "expected_null_rank": 5.0
+      },
+      "capped_relation_index": {
+        "target_mean": 253358.125,
+        "control_mean": 259422.01075,
+        "mean_difference": -6063.88575,
+        "cluster_bootstrap_95_ci": [
+          -14937.351828125,
+          2736.601393749997
+        ],
+        "exchangeability_p": 0.17457825421745782,
+        "mean_target_rank_among_9": 4.8985,
+        "expected_null_rank": 5.0
+      }
+    }
+  ],
+  "interpretation": "Lower capped index/rank means an earlier relation; success is 1 when observed before censoring."
+}

@@ -1,0 +1,73 @@
+{
+  "scheme": "DLP-GEN-H2P-v1",
+  "protocol": "research-demo-v1",
+  "role": "independent-generator",
+  "public_seed": "NIST-beacon-placeholder-not-for-production",
+  "full_length_x": true,
+  "records": [
+    {
+      "curve": "secp160k1",
+      "index": 0,
+      "x": "8c9a2c1fa0d036d4973dc0ef72f2644e7cbabfa4",
+      "y": "b8f3167a763eb7ec8c19e429e3e21502d68fd159",
+      "counter": 3,
+      "transcript_sha256": "bcd45a139d98cd9c3cac938579682708c099e6558bd151fe968dd9abd34da2e2"
+    },
+    {
+      "curve": "secp160k1",
+      "index": 1,
+      "x": "e8a463ec409e548b3e868b65565a347da0cb5cbf",
+      "y": "5b76df912014a9572d1166bb36f8108085c2a118",
+      "counter": 10,
+      "transcript_sha256": "646c60825a7e61c42a3bca7ebb2d72f3dec70356d81b20dab12f114b1cb5a38c"
+    },
+    {
+      "curve": "secp192k1",
+      "index": 0,
+      "x": "f7824a6c738e7eef0a4966a568bc9c73fc4ddeba833a7e53",
+      "y": "416b96cf057cd4581eaf035a51a2b02e90eda331eef7e89e",
+      "counter": 12,
+      "transcript_sha256": "e440b8371b5469d7dfc4c755bf4482bb1a3553c14b5525ad36ca9c4f7c3b1419"
+    },
+    {
+      "curve": "secp192k1",
+      "index": 1,
+      "x": "b6c60ff0bd09b2e47af0a85e05d9119b34fe50c20d6c570f",
+      "y": "94eee11516dc3218d56753e42a41e617b6152294346b4f66",
+      "counter": 3,
+      "transcript_sha256": "f48a924a3db2cda9199de929b7a012994ff63318fdf16f6e31744861e00dc401"
+    },
+    {
+      "curve": "secp224k1",
+      "index": 0,
+      "x": "ec26da4ac5787839ad162f79d27e4078802404705ba15e101b0e5c14",
+      "y": "e4ec761f413a176b3351377746b563cf957a46098bbbbcddfb21c497",
+      "counter": 1,
+      "transcript_sha256": "99fb66090f15b81002f639cffa407715038ff523b79ea34bb6307a02d4ed8606"
+    },
+    {
+      "curve": "secp224k1",
+      "index": 1,
+      "x": "eda6b2b8f456908f8e1b4ed4495ac1e54f3bf5b31e1075ce11792c12",
+      "y": "b2bcdb70a322901306ad5d5708b966955224144075745017fafad7e3",
+      "counter": 4,
+      "transcript_sha256": "5b54b0b72a683de0069035f9faec2789c49fe753adcd2b27a6fa4c6ff7957207"
+    },
+    {
+      "curve": "secp256k1",
+      "index": 0,
+      "x": "9e1c0d4cfc71ce6991d0bc2876582006fe5015bba3f64e468b37222b930c190e",
+      "y": "32b45297ddee9211d691e3f14cead0ad10f6eef50ecaa64ac14290e5851f435d",
+      "counter": 5,
+      "transcript_sha256": "3cc5fa45b19a9d6b4204b4616dcb47ff1a22d99d3ef73b64e1c429c970fe03e3"
+    },
+    {
+      "curve": "secp256k1",
+      "index": 1,
+      "x": "d1cf695322818b79b698c55021001a5f6355b93b8fc81ede93fa7b9c6a1c2053",
+      "y": "a0202cf5d51a4b55a82405eba46f22a2786ab6ec72dbccd93c3ca018885e2a62",
+      "counter": 1,
+      "transcript_sha256": "a343bf11c6e53afa01e09df190d8bc48e94a03032033b1195c2dd268c54bb0ba"
+    }
+  ]
+}

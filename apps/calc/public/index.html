@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A keyboard-friendly scientific RPN calculator from SovereignSteak.">
+    <meta name="theme-color" content="#100d0b">
+    <title>RPN Calculator · SovereignSteak</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/rpn-engine.js" defer></script>
+    <script src="/calculator.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <header class="site-header">
+        <a class="brand" href="https://sovereignsteak.com">SovereignSteak</a>
+        <button id="shortcuts-toggle" class="text-button" type="button" aria-expanded="false" aria-controls="shortcuts">Keyboard help</button>
+      </header>
+
+      <section class="calculator" aria-labelledby="calculator-title">
+        <div class="title-row">
+          <div>
+            <h1 id="calculator-title">RPN Calculator</h1>
+          </div>
+          <div class="modes">
+            <label class="base-control" for="base-select">BASE
+              <select id="base-select" aria-label="Number base">
+                <option value="2">2</option>
+                <option value="8">8</option>
+                <option value="10" selected>10</option>
+                <option value="16">16</option>
+                <option value="58">58 BTC</option>
+                <option value="64">64</option>
+              </select>
+            </label>
+            <button id="number-mode" class="mode-button" type="button" aria-label="Numeric mode: floating point">FP</button>
+            <button id="angle-mode" class="mode-button" type="button" aria-label="Angle mode: radians">RAD</button>
+          </div>
+        </div>
+
+        <section class="stack-panel" aria-labelledby="stack-title">
+          <div class="stack-heading">
+            <h2 id="stack-title">Stack</h2>
+            <div class="stack-actions">
+              <button type="button" data-action="undo" title="Undo (U)">Undo</button>
+              <button id="stack-toggle" type="button" aria-expanded="false">Show all</button>
+            </div>
+          </div>
+          <ol id="stack" class="stack" aria-live="polite" aria-label="RPN input and numbered stack"></ol>
+        </section>
+
+        <div class="scientific-keys" aria-label="Scientific functions">
+          <button type="button" data-unary="sin" data-fp-only title="Sine">sin</button>
+          <button type="button" data-unary="cos" data-fp-only title="Cosine">cos</button>
+          <button type="button" data-unary="tan" data-fp-only title="Tangent">tan</button>
+          <button type="button" data-binary="pow" title="Y to the X power (^)">yˣ</button>
+          <button type="button" data-binary="root" title="X-th root of Y"><sup>x</sup>√y</button>
+          <button type="button" data-unary="asin" data-fp-only title="Inverse sine">sin⁻¹</button>
+          <button type="button" data-unary="acos" data-fp-only title="Inverse cosine">cos⁻¹</button>
+          <button type="button" data-unary="atan" data-fp-only title="Inverse tangent">tan⁻¹</button>
+          <button type="button" data-binary="baseConvert" title="Display Y in base X">baseₓy</button>
+          <button type="button" data-binary="logBase" data-fp-only title="Log of Y in base X">logₓy</button>
+          <button type="button" data-binary="mod" title="Y modulo X (%)">mod</button>
+          <button type="button" data-action="pi" data-fp-only title="Push pi">π</button>
+          <button type="button" data-action="e" data-fp-only title="Push Euler's number">e</button>
+          <button type="button" data-action="sign" title="Change sign (_)">±</button>
+          <button type="button" data-unary="angleConvert" data-fp-only title="Convert radians to degrees or degrees to radians">rad↔deg</button>
+        </div>
+
+        <div class="keys" aria-label="Calculator keypad">
+          <button class="utility" type="button" data-action="clear" title="Clear stack (Esc)">AC</button>
+          <button class="utility" type="button" data-action="drop" title="Drop X (Delete)">DROP</button>
+          <button class="utility" type="button" data-action="swap" title="Swap X and Y (W)">SWAP</button>
+          <button class="operator" type="button" data-binary="/">÷</button>
+          <button type="button" data-number="7">7</button><button type="button" data-number="8">8</button><button type="button" data-number="9">9</button><button class="operator" type="button" data-binary="*">×</button>
+          <button type="button" data-number="4">4</button><button type="button" data-number="5">5</button><button type="button" data-number="6">6</button><button class="operator" type="button" data-binary="-">−</button>
+          <button type="button" data-number="1">1</button><button type="button" data-number="2">2</button><button type="button" data-number="3">3</button><button class="operator" type="button" data-binary="+">+</button>
+          <button class="zero" type="button" data-number="0">0</button><button type="button" data-action="decimal">.</button><button class="enter" type="button" data-action="enter">ENTER</button>
+        </div>
+        <p id="status" class="status" aria-live="assertive"></p>
+      </section>
+
+      <aside id="shortcuts" class="shortcuts" hidden>
+        <h2>Keyboard shortcuts</h2>
+        <dl>
+          <div><dt><kbd>0–9</kbd> <kbd>.</kbd></dt><dd>Enter a number (`.` in base 10)</dd></div>
+          <div><dt>BASE selector</dt><dd>Convert entry and stack display</dd></div>
+          <div><dt>FP / INT</dt><dd>Floating point or exact arbitrary integers</dd></div>
+          <div><dt><kbd>Enter</kbd></dt><dd>Push input or duplicate the top</dd></div>
+          <div><dt><kbd>+ − × ÷</kbd></dt><dd>Arithmetic unless used as base digits</dd></div>
+          <div><dt><kbd>Backspace</kbd></dt><dd>Edit entry</dd></div>
+          <div><dt><kbd>Delete</kbd></dt><dd>Drop the top value</dd></div>
+          <div><dt><kbd>Esc</kbd></dt><dd>Clear stack</dd></div>
+          <div><dt>Letters</dt><dd>Digits in bases 16, 58, and 64</dd></div>
+          <div><dt><kbd>^</kbd></dt><dd>Power when not a base digit</dd></div>
+          <div><dt><kbd>_</kbd></dt><dd>Change sign</dd></div>
+        </dl>
+      </aside>
+    </main>
+  </body>
+</html>

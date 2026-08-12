@@ -1,0 +1,13 @@
+{
+  "name": "sovereignsteak-site",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "check": "WRANGLER_WRITE_LOGS=false wrangler deploy --dry-run"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

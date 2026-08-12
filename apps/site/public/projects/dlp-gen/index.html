@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A reproducible investigation of the opaque generator selection used by the SECG prime-field Koblitz curves.">
+    <meta name="theme-color" content="#130f0d">
+    <title>Opaque Generators · SovereignSteak</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="article-shell">
+      <header class="puzzle-header article-header">
+        <a href="/projects/" aria-label="Back to projects">← Projects</a>
+        <span class="brand-mark__monogram">SS</span>
+      </header>
+
+      <article class="research-article">
+        <header class="article-title">
+          <p class="eyebrow">Computational cryptography</p>
+          <h1>Opaque<span>generators.</span></h1>
+          <p class="article-deck">An investigation into a conspicuous pattern in the SECG prime-field Koblitz curve generators—and an experiment in how framing changes access to AI-assisted security research.</p>
+        </header>
+
+        <aside class="result-card" aria-label="Result in brief">
+          <strong>Result in brief</strong>
+          <p>The historical points have weak and unexplained provenance. The pattern is real. Across the tests performed, however, it behaved like a provenance defect rather than a cryptographic trapdoor.</p>
+        </aside>
+
+        <section>
+          <h2>The background</h2>
+          <p>An elliptic-curve system names a base point, usually called <code>G</code>, whose repeated addition defines the discrete-logarithm problem used by the protocol. In a prime-order group, every nonidentity point generates the same group, so standard theory gives no reason to expect one honestly selected generator to make the generic discrete-log problem easier than another.</p>
+          <p>Provenance still matters. A transparent parameter-generation procedure lets independent observers verify that a point was not selected to satisfy some undisclosed relation. The four prime-field Koblitz curves standardized in <a href="https://www.secg.org/sec2-v2.pdf">SEC 2</a>—secp160k1, secp192k1, secp224k1, and secp256k1—do not publish a verifiable-random seed for their generators.</p>
+        </section>
+
+        <section>
+          <h2>The anomaly</h2>
+          <p>For each published generator, the study computed the unique point <code>H</code> satisfying <code>G = 2H</code>. All four resulting x-coordinates contain the same 152-bit hexadecimal core:</p>
+          <pre><code>8ce563f89a0ed9414f5aa28ad0d96d6795f9c6</code></pre>
+          <p>The 224- and 256-bit curves go further: they use exactly the same integer x-coordinate for <code>H</code>. Exact arithmetic verified every published point, group order, halving relation, and compatible GLV endomorphism orientation. The shared value is not a formatting coincidence.</p>
+          <p>The simplest descriptive reconstruction is a fixed hexadecimal core with small curve-specific affixes, followed by lifting to a curve point and doubling. That describes the output; it does not recover the designers’ historical algorithm or establish their intent. Simple ascending-affix scans did not reproduce the points as the first acceptable candidates, and a bounded search of plausible SHA-1 labels and counters found no match.</p>
+        </section>
+
+        <section>
+          <h2>The blocked prompt</h2>
+          <p>The first research prompt described the work as elliptic-curve cryptanalysis. It explicitly proposed comparing special and random generators using division polynomials, summation-polynomial systems, Gröbner bases, low-height relations, GLV correlations, and small analogue curves. It also explicitly said the goal was not to break the 256-bit discrete-log problem.</p>
+          <p>ChatGPT via Codex nevertheless refused the request under its cybersecurity safeguards. ChatGPT also declined to draft the prompt itself, so Grok was used to write both the original prompt and the later revision. The refused prompt is preserved verbatim in the research package as <code>BLOCKED_PROMPT.md</code>.</p>
+          <p>That refusal is understandable at a coarse classification level: the prompt combined cryptanalysis, standardized production curves, algebraic attack techniques, and an experimental search for structural weakness. But it also illustrates a limitation of intent classification. The proposed work was CPU-bounded, reproducible, directed at public parameters, and designed to accept negative results.</p>
+        </section>
+
+        <section>
+          <h2>The reframing</h2>
+          <p>The revised prompt kept nearly the same computational program but changed its organizing purpose. Instead of asking whether the old construction might help future non-generic attacks, it asked how to understand the historical process well enough to design transparent, higher-assurance generators for hypothetical protocols.</p>
+          <p>“Special” generators became “historical-style” generators. The comparison gained deliberately improved controls: public transcripts, verifiable seeds, full-length rejection sampling, and NUMS-style points. The desired output became concrete generator-selection guidance rather than an attack. Under that framing, Codex assisted with the work. The accepted version is preserved as <code>REFRAMED_PROMPT.md</code>.</p>
+          <p>The contrast is noteworthy because most of the mathematics and experiments remained the same. What changed was the declared objective and the surrounding risk model. This does not show that one decision was necessarily wrong; it does show that safety boundaries can be sensitive to framing even when two requests enable substantially overlapping scientific work.</p>
+        </section>
+
+        <section>
+          <h2>What was tested</h2>
+          <p>The reproducible package generated 2,000 prime-order, cofactor-one, <code>j = 0</code> analogue curves from 30 to 80 bits. Each curve received a fixed-core historical-style base, an exactly sampled random control, and a transcript-derived full-length-x NUMS control. A later high-power corpus used 1,000 curves and sixteen independent random controls per curve.</p>
+          <p>The analysis included short scalar and GLV orbits, coordinate size and sparsity, exact two- and three-summand Semaev relations, matched factor-base experiments, SageMath verification, and representative Singular Gröbner-basis calculations. It also corrected two initially proposed comparisons: division polynomials and the GLV scalar lattice are properties of the curve, not of which nonzero point is named as generator.</p>
+        </section>
+
+        <section>
+          <h2>What was found</h2>
+          <p>No measured signal credibly distinguished historical-style bases from random controls. Two-summand relation studies were null at both tested factor-base sizes. The larger three-summand grid and its fresh-control replications were also null. A weak timing direction that appeared in one aggregate statistic did not strengthen across relation densities, did not produce abnormal incidence or rank, and sometimes appeared for NUMS controls as well.</p>
+          <p>SageMath independently validated the SEC calculations, all primary-corpus group orders, and hundreds of recorded relation witnesses. Singular confirmed representative polynomial ideals. The result is evidence against the effects represented by these experiments—not a general proof that no future non-generic method could exploit some untested representation.</p>
+        </section>
+
+        <section>
+          <h2>The conclusion</h2>
+          <p>The historical generator construction should not be copied. Its visible reuse and absent public derivation create avoidable suspicion. The experiments nevertheless support the conventional view that nonzero generators in these prime-order groups are effectively fungible for discrete-logarithm security.</p>
+          <p>For protocols needing independent generators, the report recommends deriving each point directly from a versioned, domain-separated public transcript: commit to the curve, protocol, roles, and encoding first; obtain later public randomness; use SHAKE256 rejection sampling and a derived sign bit; publish the counter and point; and independently verify subgroup membership, encoding, and distinctness up to sign and GLV orbit.</p>
+          <p>In other words: the coordinate artifact is a legitimate transparency problem. This study found no evidence that it is a backdoor.</p>
+        </section>
+
+        <footer class="article-notes">
+          <h2>Reproducibility</h2>
+          <p>The <a href="https://github.com/SovereignSteak/sovereignsteak.com/tree/main/research/koblitz-generators">public research package</a> includes both prompts, the exact SEC parameter checks, Python and SageMath scripts, deterministic corpora, machine-readable results, incremental notes, and the final report.</p>
+          <p><strong>Primary corpus SHA-256:</strong><br><code>a12f607eb7465417056417ad2048906690a4c197e0d8d4787a051baa5706c052</code></p>
+        </footer>
+      </article>
+    </main>
+  </body>
+</html>
