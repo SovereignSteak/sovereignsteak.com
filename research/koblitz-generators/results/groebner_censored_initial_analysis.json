@@ -1,0 +1,67 @@
+{
+  "input": "results/groebner_censored_initial.jsonl",
+  "jobs": 30,
+  "summaries": [
+    {
+      "base": "historical",
+      "order": "degrevlex",
+      "target_kind": "censored_probe",
+      "jobs": 7,
+      "completed": 1,
+      "timeouts": 6,
+      "errors": 0,
+      "completion_rate": 0.14285714285714285,
+      "median_completed_wall_seconds": 10.033910210244358,
+      "max_completed_basis_degree": 0
+    },
+    {
+      "base": "nums_full_x",
+      "order": "degrevlex",
+      "target_kind": "censored_probe",
+      "jobs": 9,
+      "completed": 0,
+      "timeouts": 9,
+      "errors": 0,
+      "completion_rate": 0.0,
+      "median_completed_wall_seconds": null,
+      "max_completed_basis_degree": null
+    },
+    {
+      "base": "nums_full_x",
+      "order": "degrevlex",
+      "target_kind": "witnessed",
+      "jobs": 2,
+      "completed": 0,
+      "timeouts": 2,
+      "errors": 0,
+      "completion_rate": 0.0,
+      "median_completed_wall_seconds": null,
+      "max_completed_basis_degree": null
+    },
+    {
+      "base": "random",
+      "order": "degrevlex",
+      "target_kind": "censored_probe",
+      "jobs": 10,
+      "completed": 0,
+      "timeouts": 10,
+      "errors": 0,
+      "completion_rate": 0.0,
+      "median_completed_wall_seconds": null,
+      "max_completed_basis_degree": null
+    },
+    {
+      "base": "random",
+      "order": "degrevlex",
+      "target_kind": "witnessed",
+      "jobs": 2,
+      "completed": 1,
+      "timeouts": 1,
+      "errors": 0,
+      "completion_rate": 0.5,
+      "median_completed_wall_seconds": 10.014642311260104,
+      "max_completed_basis_degree": 2
+    }
+  ],
+  "warning": "Completed-only timing medians are descriptive, not a comparison under censoring. Compare timeout incidence within matched curves and use survival analysis for a full campaign."
+}

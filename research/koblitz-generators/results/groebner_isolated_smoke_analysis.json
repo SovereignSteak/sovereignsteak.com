@@ -1,0 +1,62 @@
+{
+  "input": "results/groebner_isolated_smoke.jsonl",
+  "jobs": 6,
+  "summaries": [
+    {
+      "base": "historical",
+      "order": "degrevlex",
+      "jobs": 1,
+      "completed": 1,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 9.886834331788123,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "nums_full_x",
+      "order": "degrevlex",
+      "jobs": 2,
+      "completed": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 9.928505029529333,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "nums_full_x",
+      "order": "lex",
+      "jobs": 1,
+      "completed": 1,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 8.367915994487703,
+      "max_completed_basis_degree": 2
+    },
+    {
+      "base": "random",
+      "order": "degrevlex",
+      "jobs": 1,
+      "completed": 1,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 9.87743282970041,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "random",
+      "order": "lex",
+      "jobs": 1,
+      "completed": 0,
+      "timeouts": 1,
+      "errors": 0,
+      "completion_rate": 0.0,
+      "median_completed_wall_seconds": null,
+      "max_completed_basis_degree": null
+    }
+  ],
+  "warning": "Completed-only timing medians are descriptive, not a comparison under censoring. Compare timeout incidence within matched curves and use survival analysis for a full campaign."
+}

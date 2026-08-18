@@ -1,0 +1,106 @@
+{
+  "input": "results/groebner_isolated_initial.jsonl",
+  "jobs": 36,
+  "summaries": [
+    {
+      "base": "historical",
+      "order": "deglex",
+      "jobs": 2,
+      "completed": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 10.090387105941772,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "historical",
+      "order": "degrevlex",
+      "jobs": 5,
+      "completed": 5,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 10.04470203910023,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "historical",
+      "order": "lex",
+      "jobs": 4,
+      "completed": 4,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 8.480034249834716,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "nums_full_x",
+      "order": "deglex",
+      "jobs": 3,
+      "completed": 3,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 10.048167241737247,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "nums_full_x",
+      "order": "degrevlex",
+      "jobs": 5,
+      "completed": 5,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 10.522730244323611,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "nums_full_x",
+      "order": "lex",
+      "jobs": 3,
+      "completed": 3,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 8.465830511413515,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "random",
+      "order": "deglex",
+      "jobs": 4,
+      "completed": 4,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 10.07014181651175,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "random",
+      "order": "degrevlex",
+      "jobs": 7,
+      "completed": 7,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 10.033640009351075,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "random",
+      "order": "lex",
+      "jobs": 3,
+      "completed": 3,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 8.427326599135995,
+      "max_completed_basis_degree": 3
+    }
+  ],
+  "warning": "Completed-only timing medians are descriptive, not a comparison under censoring. Compare timeout incidence within matched curves and use survival analysis for a full campaign."
+}

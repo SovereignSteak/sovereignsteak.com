@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A reproducible investigation of the opaque generator selection used by the SECG prime-field Koblitz curves.">
+    <meta name="description" content="A reproducible investigation of the opaque generator selection used by the SECG prime-field Koblitz curves, including direct attack-oriented follow-up.">
     <meta name="theme-color" content="#130f0d">
     <title>Opaque Generators · SovereignSteak</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -24,12 +24,12 @@
         <header class="article-title">
           <p class="eyebrow">Computational cryptography</p>
           <h1>Opaque<span>generators.</span></h1>
-          <p class="article-deck">An investigation into a conspicuous pattern in the SECG prime-field Koblitz curve generators—and an experiment in how framing changes access to AI-assisted security research.</p>
+          <p class="article-deck">An investigation into a conspicuous pattern in the SECG prime-field Koblitz curve generators—and what changed when a defensive-security model could examine the attack hypotheses directly.</p>
         </header>
 
         <aside class="result-card" aria-label="Result in brief">
           <strong>Result in brief</strong>
-          <p>The historical points have weak and unexplained provenance. The pattern is real. Across the tests performed, however, it behaved like a provenance defect rather than a cryptographic trapdoor.</p>
+          <p>The historical points have weak and unexplained provenance, and their hidden halves have unusual fixed-base representations. Direct attack-oriented experiments nevertheless found no evidence of an easier discrete logarithm. The published doubling removes the representation anomaly, but its original purpose remains undocumented.</p>
         </aside>
 
         <section>
@@ -47,41 +47,44 @@
         </section>
 
         <section>
-          <h2>The blocked prompt</h2>
-          <p>The first research prompt described the work as elliptic-curve cryptanalysis. It explicitly proposed comparing special and random generators using division polynomials, summation-polynomial systems, Gröbner bases, low-height relations, GLV correlations, and small analogue curves. It also explicitly said the goal was not to break the 256-bit discrete-log problem.</p>
-          <p>ChatGPT via Codex nevertheless refused the request under its cybersecurity safeguards. ChatGPT also declined to draft the prompt itself, so Grok was used to write both the original prompt and the later revision. The refused prompt is preserved verbatim in the research package as <a href="https://github.com/SovereignSteak/sovereignsteak.com/blob/main/research/koblitz-generators/BLOCKED_PROMPT.md"><code>BLOCKED_PROMPT.md</code></a>.</p>
-          <p>That refusal is understandable at a coarse classification level: the prompt combined cryptanalysis, standardized production curves, algebraic attack techniques, and an experimental search for structural weakness. But it also illustrates a limitation of intent classification. The proposed work was CPU-bounded, reproducible, directed at public parameters, and designed to accept negative results.</p>
-        </section>
-
-        <section>
-          <h2>The reframing</h2>
-          <p>The revised prompt kept nearly the same computational program but changed its organizing purpose. Instead of asking whether the old construction might help future non-generic attacks, it asked how to understand the historical process well enough to design transparent, higher-assurance generators for hypothetical protocols.</p>
-          <p>“Special” generators became “historical-style” generators. The comparison gained deliberately improved controls: public transcripts, verifiable seeds, full-length rejection sampling, and NUMS-style points. The desired output became concrete generator-selection guidance rather than an attack. Under that framing, Codex assisted with the work. The accepted version is preserved as <a href="https://github.com/SovereignSteak/sovereignsteak.com/blob/main/research/koblitz-generators/REFRAMED_PROMPT.md"><code>REFRAMED_PROMPT.md</code></a>.</p>
-          <p>The contrast is noteworthy because most of the mathematics and experiments remained the same. What changed was the declared objective and the surrounding risk model. This does not show that one decision was necessarily wrong; it does show that safety boundaries can be sensitive to framing even when two requests enable substantially overlapping scientific work.</p>
+          <h2>The AI boundary</h2>
+          <p>The first prompt called the work elliptic-curve cryptanalysis and proposed comparing special and random generators with division polynomials, summation-polynomial systems, Gröbner bases, low-height relations, GLV correlations, and small analogue curves. It expressly bounded the work and disclaimed an attempt to solve a production-size discrete logarithm. GPT-5.6 Sol via Codex nevertheless refused it under its cybersecurity safeguards—and also declined to help draft the request. Grok wrote the resulting <a href="https://github.com/SovereignSteak/sovereignsteak.com/blob/main/research/koblitz-generators/BLOCKED_PROMPT.md">original prompt</a>.</p>
+          <p>To continue, the same investigation was recast as higher-assurance parameter design. “Special” points became “historical-style” points; the comparisons gained transparent random and NUMS controls; and the stated goal became guidance for designing future generators rather than evaluating attack ideas. Sol accepted the <a href="https://github.com/SovereignSteak/sovereignsteak.com/blob/main/research/koblitz-generators/REFRAMED_PROMPT.md">reframed prompt</a> and performed much of the initial study.</p>
+          <p>That was, candidly, a change in presentation more than substance. Later access to Daybreak Blue—a model intended for broad defensive cybersecurity research—made the euphemism unnecessary. The project could state its purpose plainly and complete the attack-oriented experiments directly. The sequence is an interesting case study in model specialization: nearly the same mathematical work crossed one model’s policy boundary when described indirectly, then became straightforward under a model designed for that research domain.</p>
         </section>
 
         <section>
           <h2>What was tested</h2>
           <p>The reproducible package generated 2,000 prime-order, cofactor-one, <code>j = 0</code> analogue curves from 30 to 80 bits. Each curve received a fixed-core historical-style base, an exactly sampled random control, and a transcript-derived full-length-x NUMS control. A later high-power corpus used 1,000 curves and sixteen independent random controls per curve.</p>
           <p>The analysis included short scalar and GLV orbits, coordinate size and sparsity, exact two- and three-summand Semaev relations, matched factor-base experiments, SageMath verification, and representative Singular Gröbner-basis calculations. It also corrected two initially proposed comparisons: division polynomials and the GLV scalar lattice are properties of the curve, not of which nonzero point is named as generator.</p>
+          <p>The direct follow-up added process-isolated and blinded Semaev/Gröbner campaigns, deduplicated GLV coefficient-box scans totaling more than 264 million coefficient/base observations, and actual-curve LLL searches for unusually short relations among the coordinates of successive multiples. It also tested fixed-window tables and mixed-addition intermediates for implementation-leakage proxies on the real SEC points, their exact halves, and thousands of controls.</p>
         </section>
 
         <section>
           <h2>What was found</h2>
           <p>No measured signal credibly distinguished historical-style bases from random controls. Two-summand relation studies were null at both tested factor-base sizes. The larger three-summand grid and its fresh-control replications were also null. A weak timing direction that appeared in one aggregate statistic did not strengthen across relation densities, did not produce abnormal incidence or rank, and sometimes appeared for NUMS controls as well.</p>
-          <p>SageMath independently validated the SEC calculations, all primary-corpus group orders, and hundreds of recorded relation witnesses. Singular confirmed representative polynomial ideals. The result is evidence against the effects represented by these experiments—not a general proof that no future non-generic method could exploit some untested representation.</p>
+          <p>The attack-oriented follow-up told the same story. Apparent Gröbner timeouts were explained by process startup and contention, not generator class. Two nominal GLV-orbit anomalies pointed in inconsistent directions and each failed immediate replication on fresh data. On the four production curves, none of the exact half-generators entered the preregistered lower one-percent tail in the LLL coordinate-relation search.</p>
+          <p>One real but limited effect did survive replication. The half-points for secp224k1 and secp256k1 have zero leading limbs and unusually low coordinate Hamming weights in common fixed-base representations; no corresponding control matched several of those entry-level observations in 10,000 trials. The effect concerns public table values, not secret recovery, and it disappeared from the tested mixed-addition traces. Crucially, the published generators <code>G = 2H</code> were not outliers: doubling washes out the conspicuous representation artifact.</p>
+          <p>SageMath independently validated the SEC calculations, all primary-corpus group orders, and hundreds of recorded relation witnesses. Singular confirmed representative polynomial ideals. These are strong negative results for the hypotheses actually tested, not a proof that every possible non-generic method is impossible.</p>
+        </section>
+
+        <section>
+          <h2>Why double the point?</h2>
+          <p>No located primary source explains why Certicom published twice the structured source point on all four curves. Contemporary procedures do suggest a plausible benign lineage: Certicom’s 1997 ECC Challenge generated a candidate point and multiplied it by the curve cofactor, while binary Koblitz curves commonly had cofactors 2 or 4. A “derive, then multiply by a small cofactor” convention or tool may have carried over to the prime-field family.</p>
+          <p>That explanation is incomplete because all four prime-field curves have cofactor 1; no applicable standard calls for the extra doubling. Another plausible possibility is presentation: a roughly SHA-1-width source coordinate could be lifted and doubled to produce a full-width-looking published coordinate. The experiment confirms that doubling removes the source point’s obvious encoding anomaly, but no evidence shows that concealment was the intention.</p>
+          <p>The most defensible conclusion is that doubling probably reflects an undocumented generation or presentation convention inherited from cofactor-clearing workflows. It obscures the source-point structure predictably, but the surviving record does not establish why it was done.</p>
         </section>
 
         <section>
           <h2>The conclusion</h2>
-          <p>The historical generator construction should not be copied. Its visible reuse and absent public derivation create avoidable suspicion. The experiments nevertheless support the conventional view that nonzero generators in these prime-order groups are effectively fungible for discrete-logarithm security.</p>
+          <p>The historical generator construction should not be copied. Its visible reuse and absent public derivation create avoidable suspicion. The direct attack-oriented experiments nevertheless support the conventional view that nonzero generators in these prime-order groups are effectively fungible for discrete-logarithm security.</p>
           <p>For protocols needing independent generators, the report recommends deriving each point directly from a versioned, domain-separated public transcript: commit to the curve, protocol, roles, and encoding first; obtain later public randomness; use SHAKE256 rejection sampling and a derived sign bit; publish the counter and point; and independently verify subgroup membership, encoding, and distinctness up to sign and GLV orbit.</p>
-          <p>In other words: the coordinate artifact is a legitimate transparency problem. This study found no evidence that it is a backdoor.</p>
+          <p>In other words: the coordinate artifact is a legitimate transparency problem, and the half-points really are unusual representations. This study found no evidence that either fact creates a cryptographic backdoor.</p>
         </section>
 
         <footer class="article-notes">
           <h2>Reproducibility</h2>
-          <p>The <a href="https://github.com/SovereignSteak/sovereignsteak.com/tree/main/research/koblitz-generators">public research package</a> includes both prompts, the exact SEC parameter checks, Python and SageMath scripts, deterministic corpora, machine-readable results, incremental notes, and the final report.</p>
+          <p>The <a href="https://github.com/SovereignSteak/sovereignsteak.com/tree/main/research/koblitz-generators">public research package</a> includes both prompts, the exact SEC parameter checks, Python and SageMath scripts, deterministic corpora, machine-readable results, incremental notes, and the final report. The later work is summarized in the <a href="https://github.com/SovereignSteak/sovereignsteak.com/blob/main/research/koblitz-generators/ATTACK_FOLLOWUP.md">attack-oriented follow-up</a> and the sourced investigation of the <a href="https://github.com/SovereignSteak/sovereignsteak.com/blob/main/research/koblitz-generators/DOUBLING_RATIONALE_RESEARCH.md">doubling rationale</a>.</p>
           <p><strong>Primary corpus SHA-256:</strong><br><code>a12f607eb7465417056417ad2048906690a4c197e0d8d4787a051baa5706c052</code></p>
         </footer>
       </article>

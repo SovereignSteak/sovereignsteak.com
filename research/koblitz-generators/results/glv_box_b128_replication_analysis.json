@@ -1,0 +1,54 @@
+{
+  "input": "results/glv_box_b128_replication.jsonl",
+  "analyses": [
+    {
+      "target": "historical",
+      "metric": "log2_min_centered_x",
+      "curves": 200,
+      "controls": 8,
+      "mean_target_minus_controls": 0.02895057180773266,
+      "exchangeability_p": 0.8305416945830542
+    },
+    {
+      "target": "historical",
+      "metric": "min_x_popcount",
+      "curves": 200,
+      "controls": 8,
+      "mean_target_minus_controls": 0.06625,
+      "exchangeability_p": 0.23892761072389276
+    },
+    {
+      "target": "historical",
+      "metric": "min_x_bits",
+      "curves": 200,
+      "controls": 8,
+      "mean_target_minus_controls": -0.025,
+      "exchangeability_p": 0.8726912730872691
+    },
+    {
+      "target": "nums_full_x",
+      "metric": "log2_min_centered_x",
+      "curves": 200,
+      "controls": 8,
+      "mean_target_minus_controls": -0.0019300298929167514,
+      "exchangeability_p": 0.9893101068989311
+    },
+    {
+      "target": "nums_full_x",
+      "metric": "min_x_popcount",
+      "curves": 200,
+      "controls": 8,
+      "mean_target_minus_controls": -0.05375,
+      "exchangeability_p": 0.32959670403295965
+    },
+    {
+      "target": "nums_full_x",
+      "metric": "min_x_bits",
+      "curves": 200,
+      "controls": 8,
+      "mean_target_minus_controls": 0.2,
+      "exchangeability_p": 0.15141848581514186
+    }
+  ],
+  "interpretation": "The GLV coefficient set is identical for all bases on each curve; only its image coordinates differ."
+}

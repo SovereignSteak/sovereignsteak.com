@@ -43,3 +43,9 @@ public seed fixed after the protocol and curve choices are committed.
 
 The checked-in corpus was generated in four deterministic 500-row shards. Its merge
 and exact invocation details are documented in `REPORT.md`.
+
+The later attack-oriented follow-up, including isolated Gröbner workers and replicated
+GLV coefficient-box tests, is documented in `ATTACK_FOLLOWUP.md`.
+
+The sourced investigation of plausible historical reasons for publishing `G=2H` is in
+`DOUBLING_RATIONALE_RESEARCH.md`.

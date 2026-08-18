@@ -1,0 +1,333 @@
+{
+  "inputs": [
+    "results/lll_secp160k1_discovery.jsonl",
+    "results/lll_secp192k1_discovery.jsonl",
+    "results/lll_secp224k1_discovery.jsonl",
+    "results/lll_secp256k1_discovery.jsonl"
+  ],
+  "records": 16032,
+  "analyses": [
+    {
+      "curve": "secp160k1",
+      "dimension": 6,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.3634315031228894,
+      "lower_tail_rank": 452,
+      "lower_tail_fraction": 0.452,
+      "two_sided_empirical_p": 0.9050949050949051
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 6,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.18484680564304057,
+      "lower_tail_rank": 752,
+      "lower_tail_fraction": 0.752,
+      "two_sided_empirical_p": 0.4975024975024975
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 8,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.38067942718408787,
+      "lower_tail_rank": 211,
+      "lower_tail_fraction": 0.211,
+      "two_sided_empirical_p": 0.42357642357642356
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 8,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": 0.04620422482834741,
+      "lower_tail_rank": 956,
+      "lower_tail_fraction": 0.956,
+      "two_sided_empirical_p": 0.0899100899100899
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 10,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.1079708808699742,
+      "lower_tail_rank": 448,
+      "lower_tail_fraction": 0.448,
+      "two_sided_empirical_p": 0.8971028971028971
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 10,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.3368607358580231,
+      "lower_tail_rank": 108,
+      "lower_tail_fraction": 0.108,
+      "two_sided_empirical_p": 0.2177822177822178
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 12,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.2568727594371616,
+      "lower_tail_rank": 75,
+      "lower_tail_fraction": 0.075,
+      "two_sided_empirical_p": 0.15184815184815184
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 12,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": 0.09921052628742899,
+      "lower_tail_rank": 825,
+      "lower_tail_fraction": 0.825,
+      "two_sided_empirical_p": 0.3516483516483517
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 6,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.32882316964798264,
+      "lower_tail_rank": 488,
+      "lower_tail_fraction": 0.488,
+      "two_sided_empirical_p": 0.977022977022977
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 6,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.5178697441609401,
+      "lower_tail_rank": 244,
+      "lower_tail_fraction": 0.244,
+      "two_sided_empirical_p": 0.48951048951048953
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 8,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.9074754286551716,
+      "lower_tail_rank": 17,
+      "lower_tail_fraction": 0.017,
+      "two_sided_empirical_p": 0.03596403596403597
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 8,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.1445376778676355,
+      "lower_tail_rank": 617,
+      "lower_tail_fraction": 0.617,
+      "two_sided_empirical_p": 0.7672327672327672
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 10,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.2821339196535142,
+      "lower_tail_rank": 176,
+      "lower_tail_fraction": 0.176,
+      "two_sided_empirical_p": 0.35364635364635366
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 10,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.03754025000492689,
+      "lower_tail_rank": 647,
+      "lower_tail_fraction": 0.647,
+      "two_sided_empirical_p": 0.7072927072927073
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 12,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": 0.08848477778127872,
+      "lower_tail_rank": 772,
+      "lower_tail_fraction": 0.772,
+      "two_sided_empirical_p": 0.45754245754245754
+    },
+    {
+      "curve": "secp192k1",
+      "dimension": 12,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.09302866267366916,
+      "lower_tail_rank": 270,
+      "lower_tail_fraction": 0.27,
+      "two_sided_empirical_p": 0.5414585414585414
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 6,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.720419487008229,
+      "lower_tail_rank": 109,
+      "lower_tail_fraction": 0.109,
+      "two_sided_empirical_p": 0.21978021978021978
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 6,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.33712815433662513,
+      "lower_tail_rank": 450,
+      "lower_tail_fraction": 0.45,
+      "two_sided_empirical_p": 0.9010989010989011
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 8,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.05953857372057669,
+      "lower_tail_rank": 793,
+      "lower_tail_fraction": 0.793,
+      "two_sided_empirical_p": 0.4155844155844156
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 8,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.32420699115181506,
+      "lower_tail_rank": 314,
+      "lower_tail_fraction": 0.314,
+      "two_sided_empirical_p": 0.6293706293706294
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 10,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.16076386182500002,
+      "lower_tail_rank": 341,
+      "lower_tail_fraction": 0.341,
+      "two_sided_empirical_p": 0.6833166833166833
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 10,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.18905229227764764,
+      "lower_tail_rank": 283,
+      "lower_tail_fraction": 0.283,
+      "two_sided_empirical_p": 0.5674325674325674
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 12,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": 0.04626871454397019,
+      "lower_tail_rank": 634,
+      "lower_tail_fraction": 0.634,
+      "two_sided_empirical_p": 0.7332667332667333
+    },
+    {
+      "curve": "secp224k1",
+      "dimension": 12,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": 0.12415451729217963,
+      "lower_tail_rank": 849,
+      "lower_tail_fraction": 0.849,
+      "two_sided_empirical_p": 0.3036963036963037
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 6,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.19032575294582443,
+      "lower_tail_rank": 729,
+      "lower_tail_fraction": 0.729,
+      "two_sided_empirical_p": 0.5434565434565435
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 6,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.07924804612291325,
+      "lower_tail_rank": 896,
+      "lower_tail_fraction": 0.896,
+      "two_sided_empirical_p": 0.2097902097902098
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 8,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.09560778357058908,
+      "lower_tail_rank": 706,
+      "lower_tail_fraction": 0.706,
+      "two_sided_empirical_p": 0.5894105894105894
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 8,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.37352570521984774,
+      "lower_tail_rank": 228,
+      "lower_tail_fraction": 0.228,
+      "two_sided_empirical_p": 0.45754245754245754
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 10,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.5248016179133828,
+      "lower_tail_rank": 28,
+      "lower_tail_fraction": 0.028,
+      "two_sided_empirical_p": 0.057942057942057944
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 10,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": -0.15630321495225985,
+      "lower_tail_rank": 353,
+      "lower_tail_fraction": 0.353,
+      "two_sided_empirical_p": 0.7072927072927073
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 12,
+      "point_kind": "published_g",
+      "controls": 1000,
+      "normalized_log2_l2": -0.10500182051763218,
+      "lower_tail_rank": 250,
+      "lower_tail_fraction": 0.25,
+      "two_sided_empirical_p": 0.5014985014985015
+    },
+    {
+      "curve": "secp256k1",
+      "dimension": 12,
+      "point_kind": "half_h",
+      "controls": 1000,
+      "normalized_log2_l2": 0.23439864627187035,
+      "lower_tail_rank": 989,
+      "lower_tail_fraction": 0.989,
+      "two_sided_empirical_p": 0.023976023976023976
+    }
+  ],
+  "primary_endpoint": "normalized log2 Euclidean norm; lower means a shorter relation",
+  "trigger": "Replicate any lower-tail fraction below 0.01 using a fresh seed."
+}

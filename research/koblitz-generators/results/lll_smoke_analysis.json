@@ -1,0 +1,90 @@
+{
+  "inputs": [
+    "results/lll_smoke.jsonl"
+  ],
+  "records": 28,
+  "analyses": [
+    {
+      "curve": "secp160k1",
+      "dimension": 6,
+      "point_kind": "published_g",
+      "controls": 5,
+      "normalized_log2_l2": -0.3634315031228894,
+      "lower_tail_rank": 2,
+      "lower_tail_fraction": 0.4,
+      "two_sided_empirical_p": 1.0
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 6,
+      "point_kind": "half_h",
+      "controls": 5,
+      "normalized_log2_l2": -0.18484680564304057,
+      "lower_tail_rank": 4,
+      "lower_tail_fraction": 0.8,
+      "two_sided_empirical_p": 0.6666666666666666
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 8,
+      "point_kind": "published_g",
+      "controls": 5,
+      "normalized_log2_l2": -0.38067942718408787,
+      "lower_tail_rank": 1,
+      "lower_tail_fraction": 0.2,
+      "two_sided_empirical_p": 0.6666666666666666
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 8,
+      "point_kind": "half_h",
+      "controls": 5,
+      "normalized_log2_l2": 0.04620422482834741,
+      "lower_tail_rank": 5,
+      "lower_tail_fraction": 1.0,
+      "two_sided_empirical_p": 0.3333333333333333
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 10,
+      "point_kind": "published_g",
+      "controls": 5,
+      "normalized_log2_l2": -0.1079708808699742,
+      "lower_tail_rank": 1,
+      "lower_tail_fraction": 0.2,
+      "two_sided_empirical_p": 0.6666666666666666
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 10,
+      "point_kind": "half_h",
+      "controls": 5,
+      "normalized_log2_l2": -0.3368607358580231,
+      "lower_tail_rank": 0,
+      "lower_tail_fraction": 0.0,
+      "two_sided_empirical_p": 0.3333333333333333
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 12,
+      "point_kind": "published_g",
+      "controls": 5,
+      "normalized_log2_l2": -0.2568727594371616,
+      "lower_tail_rank": 1,
+      "lower_tail_fraction": 0.2,
+      "two_sided_empirical_p": 0.6666666666666666
+    },
+    {
+      "curve": "secp160k1",
+      "dimension": 12,
+      "point_kind": "half_h",
+      "controls": 5,
+      "normalized_log2_l2": 0.09921052628742899,
+      "lower_tail_rank": 4,
+      "lower_tail_fraction": 0.8,
+      "two_sided_empirical_p": 0.6666666666666666
+    }
+  ],
+  "primary_endpoint": "normalized log2 Euclidean norm; lower means a shorter relation",
+  "trigger": "Replicate any lower-tail fraction below 0.01 using a fresh seed."
+}

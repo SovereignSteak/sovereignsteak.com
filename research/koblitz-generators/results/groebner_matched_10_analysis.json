@@ -1,0 +1,79 @@
+{
+  "input": "results/groebner_matched_10.jsonl",
+  "jobs": 30,
+  "summaries": [
+    {
+      "base": "historical",
+      "order": "degrevlex",
+      "target_kind": "censored_probe",
+      "jobs": 8,
+      "completed": 8,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 15.214755343273282,
+      "max_completed_basis_degree": 0
+    },
+    {
+      "base": "historical",
+      "order": "degrevlex",
+      "target_kind": "witnessed",
+      "jobs": 2,
+      "completed": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 15.20050188805908,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "nums_full_x",
+      "order": "degrevlex",
+      "target_kind": "censored_probe",
+      "jobs": 8,
+      "completed": 8,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 15.403934097848833,
+      "max_completed_basis_degree": 0
+    },
+    {
+      "base": "nums_full_x",
+      "order": "degrevlex",
+      "target_kind": "witnessed",
+      "jobs": 2,
+      "completed": 2,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 15.444382160902023,
+      "max_completed_basis_degree": 3
+    },
+    {
+      "base": "random",
+      "order": "degrevlex",
+      "target_kind": "censored_probe",
+      "jobs": 7,
+      "completed": 7,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 15.30679335910827,
+      "max_completed_basis_degree": 0
+    },
+    {
+      "base": "random",
+      "order": "degrevlex",
+      "target_kind": "witnessed",
+      "jobs": 3,
+      "completed": 3,
+      "timeouts": 0,
+      "errors": 0,
+      "completion_rate": 1.0,
+      "median_completed_wall_seconds": 10.049379142932594,
+      "max_completed_basis_degree": 3
+    }
+  ],
+  "warning": "Completed-only timing medians are descriptive, not a comparison under censoring. Compare timeout incidence within matched curves and use survival analysis for a full campaign."
+}
