@@ -75,3 +75,17 @@ systems show severe Gröbner heavy tails, but no completed observation ties this
 
 Current hypothesis: the visible coordinate structure harms provenance, but the tested
 algebraic observables provide no evidence of a base-specific ECDLP shortcut.
+
+## Stage 8 — inverse-scalar prior-art reproduction (complete)
+
+DiSSECT's published trait `x([k^-1]G)` for `k=1,...,8` was reproduced on every real
+SEC k1 curve against 2,000 transcript-derived controls per curve. The secp224k1 and
+secp256k1 generators are extreme because `k=2` exposes their shared 166-bit
+half-generator x-coordinate; the shortest controls were respectively 212 and 242 bits.
+secp160k1 and secp192k1 were ordinary under the same aggregate metrics.
+
+Exploratory small-integer, power-of-two, low-Hamming-weight, and GLV-combination
+families used 250 fresh controls per curve. They retained the 224/256 distinction but
+found no additional witness: every extreme bit-length and zero-limb result still came
+from `k=2`. This confirms a strong public-parameter distinguisher, not an ECDLP shortcut.
+Methods, prior art, and results are in `INVERSE_SCALAR_TRAITS.md`.

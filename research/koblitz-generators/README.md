@@ -6,9 +6,12 @@ It preserves both the initially blocked cybersecurity-oriented prompt and the ac
 higher-assurance reframing, along with the scripts, deterministic data, machine-readable
 results, incremental notes, and final report.
 
-The verified coordinate pattern is a provenance concern. The experiments found no
-credible evidence of a base-specific ECDLP shortcut; see `FINAL_REPORT.md` for the
-scope and limitations of that conclusion.
+The verified coordinate pattern is a provenance concern. The underlying `G/2` anomaly
+was previously reported by Heninger, Scholl, and Shumow and used as an inverse-scalar
+trait by DiSSECT. This project reproduces that distinguisher and investigates its
+construction, cryptanalytic significance, and implementation consequences. The
+experiments found no credible evidence of a base-specific ECDLP shortcut; see
+`FINAL_REPORT.md` for the scope and limitations of that conclusion.
 
 ## Reproduction
 
@@ -46,6 +49,9 @@ and exact invocation details are documented in `REPORT.md`.
 
 The later attack-oriented follow-up, including isolated Gröbner workers and replicated
 GLV coefficient-box tests, is documented in `ATTACK_FOLLOWUP.md`.
+
+The exact reproduction and extension of DiSSECT's inverse-scalar trait is documented
+in `INVERSE_SCALAR_TRAITS.md`.
 
 The sourced investigation of plausible historical reasons for publishing `G=2H` is in
 `DOUBLING_RATIONALE_RESEARCH.md`.

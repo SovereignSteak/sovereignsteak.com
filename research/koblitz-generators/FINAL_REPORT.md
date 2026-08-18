@@ -8,12 +8,33 @@ secp256k1 use the same integer half-generator x-coordinate. This is a genuine NU
 public-confidence problem.
 
 No experiment in this study found credible evidence that the historical construction
-changes ECDLP difficulty or creates a base-specific algebraic shortcut. Within the
-tested prime-order groups, historical-style, uniformly sampled, and transcript-derived
-NUMS bases behaved as practically fungible.
+changes ECDLP difficulty under the nongeneric mechanisms tested or creates a
+base-specific algebraic shortcut. Historical-style, uniformly sampled, and
+transcript-derived NUMS bases behaved alike under those experiments.
 
 This is evidence against effects represented by the tested models, not a universal
 proof against all future nongeneric algorithms.
+
+Shoup's [generic-group lower bounds](https://link.springer.com/chapter/10.1007/3-540-69053-0_18)
+explain why changing a nonidentity generator cannot improve an abstract generic attack.
+Coordinates, encodings, endomorphisms, implementation
+behavior, and relations between multiple protocol generators are outside that model and
+must be considered separately. In particular, a known relation `H=[a]G` can invalidate
+the binding or independence assumptions of multi-generator protocols even when
+single-base ECDLP is unchanged.
+
+## Prior work and novelty
+
+The half-generator anomaly was not first observed here. Heninger, Scholl, and Shumow
+presented the exact secp160k1 half-coordinate in a Crypto 2019 rump-session talk, and
+DiSSECT (ePrint 2022/943) subsequently used `x([k^-1]G)` for `k=1,...,8` as a curve
+trait, identifying secp224k1 and secp256k1 as exceptional among comparable standards.
+
+This project's contribution is the exact reconstruction across all four prime-field
+k1 curves; controlled analogue corpora; blinded Semaev/Gröbner experiments; replicated
+GLV scans; real-curve coordinate-relation and implementation-proxy tests; direct
+reproduction of the inverse-scalar distinguisher; and a sourced investigation of the
+historical doubling convention.
 
 ## Historical reconstruction
 
@@ -44,6 +65,14 @@ Initial orbit tests found no historical/control differences in coordinate length
 sparsity, minimum centered coordinate, or scaling. Division-polynomial factors and the
 GLV scalar lattice were confirmed to be curve-level rather than base-level properties.
 
+The exact DiSSECT inverse-scalar trait was then reproduced on the real curves against
+2,000 controls each. For secp224k1 and secp256k1, `k=2` exposes a 166-bit x-coordinate;
+the shortest control coordinates were respectively 212 and 242 bits (two-sided
+empirical midrank p=0.000500 for each). secp160k1 and secp192k1 were ordinary under the
+same aggregate metrics. Broader exploratory scalar families found no new witness:
+`k=2` remained responsible for every 224/256 distinction. This is a strong public
+parameter distinguisher but supplies no small ECDLP secret.
+
 Two-summand Semaev tests gave:
 
 | factor-base size | historical | random | paired incidence p | capped timing p |
@@ -63,6 +92,10 @@ Three-summand Semaev f4 tests on the original eight-control high-power design ga
 The joint grid-wide success comparison was 55.28% historical versus 54.69% control,
 with p=0.466 and a 95% interval of -0.95 to +2.12 percentage points. Historical mean
 rank was 5.02 among nine bases, versus the null expectation 5.00.
+
+That interval is also a precision statement: within this experimental design, the data
+are inconsistent at the 95% level with a historical-base incidence advantage larger
+than about 2.1 percentage points. It does not bound effects in untested attack models.
 
 The grid-wide capped first-relation statistic had p=0.087. This small, nonsignificant
 direction was investigated with eight fresh controls. The completed 16-control
@@ -90,16 +123,21 @@ that behavior with a base class.
 ## Recommendation
 
 For protocols requiring independent generators, derive each point directly from a
-public transcript using a versioned, domain-separated hash-to-point procedure:
+public transcript using a versioned, domain-separated hash-to-curve procedure:
 
 1. Commit to protocol, curve, roles, encoding, and generator count before selecting the
    public seed.
 2. Obtain the seed from a future randomness beacon or multi-party commit/reveal.
-3. Use SHAKE256 rejection sampling for x and a hash-derived sign bit.
-4. Publish the transcript, counter, and resulting point.
-5. Verify canonical encoding, on-curve status, nonidentity, correct subgroup order,
+3. Where a reviewed suite exists, use the standardized hash-to-curve construction—for
+   example, RFC 9380 defines suites for secp256k1. Do not hash to a scalar and multiply
+   the existing generator, because that publishes the discrete-log relation.
+4. For a one-time ceremony on a curve without a standardized suite, an explicitly
+   specified SHAKE256 candidate-x rejection procedure remains auditable, but should be
+   described as a project-specific map rather than a general hash-to-curve standard.
+5. Publish the complete transcript, suite or map identifier, and resulting point.
+6. Verify canonical encoding, on-curve status, nonidentity, correct subgroup order,
    distinctness up to sign, and distinctness across the GLV orbit.
-6. Do not derive one protocol generator as a publicly or privately known scalar multiple
+7. Do not derive one protocol generator as a publicly or privately known scalar multiple
    of another.
 
 This construction preserves GLV acceleration; the endomorphism and its scalar lattice
@@ -114,6 +152,8 @@ do not depend on which nonzero generator is named.
 - `sage/further_analysis.py`: Sage order and division-polynomial checks.
 - `sage/verify_relations.py` and `sage/verify_f4.py`: independent witnesses and ideals.
 - `scripts/derive_sec2_generators.py`: recommended generator derivation.
+- `scripts/inverse_scalar_traits.py`: DiSSECT-trait reproduction and extensions.
+- `results/inverse_scalar_traits_analysis.json`: inverse-orbit empirical ranks.
 - `results/high_value_grid_analysis.json`: joint preregistered result.
 - `results/high_value_16c_b12_analysis.json`, `high_value_16c_b16_analysis.json`, and
   `high_value_16c_b24_analysis.json`: adaptive fresh-control checks.
@@ -129,7 +169,7 @@ High-power corpus SHA-256:
 ## Bottom line
 
 The historical generator-selection process should not be copied because it is opaque
-and creates avoidable suspicion. The measured algebraic behavior, however, supports the
-standard view: nonzero generators of these prime-order groups are effectively fungible
-for ECDLP security, and the observed coordinate artifact appears to be a provenance
-defect rather than a cryptographic trapdoor.
+and creates avoidable suspicion. The measured algebraic behavior supports a narrower
+statement: no tested nongeneric mechanism made these generators easier for ECDLP. The
+observed coordinate artifact is a strong provenance distinguisher, but no tested result
+turns it into a cryptographic trapdoor.

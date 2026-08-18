@@ -67,16 +67,20 @@ Use `scripts/derive_sec2_generators.py` with these rules:
 1. Commit publicly to the curve, protocol, roles, generator count, encoding, and scheme
    version before selecting a seed. Take the seed from a future public randomness beacon
    or a multi-party commit/reveal transcript.
-2. Domain-separate protocol, curve parameters, role/index, seed, and version. SHAKE256
-   produces candidate x and sign bits; reject x>=p, non-residues, infinity, wrong order,
-   and (optionally) non-full-length x. Publish the transcript, counter, and point.
-3. Derive every role under a distinct label/index. Do not create `H=[known scalar]G`:
+2. Domain-separate protocol, curve parameters, role/index, seed, and version. Where a
+   reviewed suite exists, use standardized hash-to-curve (RFC 9380 includes
+   secp256k1). Do not hash to a scalar and multiply the existing generator, since that
+   makes the discrete-log relation public.
+3. On curves without a standardized suite, a one-time SHAKE256 candidate-x rejection
+   ceremony can be audited if its exact map, transcript, counter, and point are
+   published. Treat it as a project-specific construction rather than a standard map.
+4. Derive every role under a distinct label/index. Do not create `H=[known scalar]G`:
    whoever selected that scalar would know the discrete-log relation. Direct hash-to-point
    derivation avoids constructing such a known relation.
-4. Verify on-curve, nonidentity, `[n]P=O`, distinctness up to sign and GLV orbit, and the
+5. Verify on-curve, nonidentity, `[n]P=O`, distinctness up to sign and GLV orbit, and the
    canonical encoding in at least two independent implementations. Cofactor-clear on
    curves with h>1; these four have h=1.
-5. Keep GLV acceleration: generator choice does not alter the endomorphism or its scalar
+6. Keep GLV acceleration: generator choice does not alter the endomorphism or its scalar
    lattice. Treat full-length x as removal of a visual artifact, not a hardness claim.
 
 Example:

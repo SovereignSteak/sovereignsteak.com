@@ -5,6 +5,12 @@
 Two previously incomplete attack-oriented experiments are now reproducible. Neither
 found evidence that the historical-style generator is easier than uniform controls.
 
+The coordinate anomaly itself is, however, a strong inverse-orbit distinguisher. The
+separate `INVERSE_SCALAR_TRAITS.md` experiment reproduces DiSSECT's published
+`x([k^-1]G), k=1,...,8` trait and distinguishes secp224k1 and secp256k1 from every one
+of 2,000 matched controls through `k=2`. This is prior art and a parameter-provenance
+result, not evidence of easier ECDLP.
+
 ## Process-isolated Semaev/Gröbner campaign
 
 `scripts/run_blinded_groebner.py` randomizes opaque job identifiers and runs exactly one
