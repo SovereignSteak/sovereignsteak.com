@@ -53,6 +53,38 @@ standard located recommends an extra doubling on a prime-order curve.
 These facts establish a shared deterministic construction but do not identify its seed,
 message format, or motivation.
 
+## Adjacent evidence from late-1990s curve seeds
+
+Stephen Weis's 2023 article
+[*How were the NIST ECDSA curve parameters generated?*](https://saweis.net/posts/nist-curve-seed-origins.html)
+collects a relevant but separate provenance story from the same standards era. Most
+importantly, Bernstein and Lange later published a 2015 email exchange with Jerry
+Solinas in Appendix C of
+[*Safe curves for elliptic-curve cryptography*](https://cr.yp.to/papers/safecurves-20240809.pdf).
+Solinas said, with explicit uncertainty about the details, that the NIST/X9.62 seeds had
+been built by hashing the ASCII representation of a humorous message, probably using
+SHA-1 and a counter. He and Bob Reiter could no longer recover the exact message,
+serialization, or code.
+
+The same X9.62 parameter collection also contains binary-field curve seeds with the
+visible ASCII substring `MinghuaQu`, the name of a Certicom cryptographer. This is direct
+evidence that human-meaningful material appeared in contemporary elliptic-curve
+parameter sets, and the Solinas emails make a forgotten message-and-counter process a
+credible historical phenomenon rather than a modern invention.
+
+This does **not** establish the origin of the SEC prime-field Koblitz generators. The
+NIST/X9.62 curve seeds and the SEC base points are different constants, produced for
+different parameter families, and no source connects Solinas's procedure to the shared
+152-bit half-generator core. The resemblance only raises the prior plausibility of a
+human-chosen message, template, or SHA-1-width intermediate.
+
+Even a guessed phrase whose SHA-1 digest matched the visible core would not by itself
+prove the complete generator history: truncation, affixes, counters, lift parity,
+acceptance tests, and doubling would still need to reproduce all four points under one
+documented rule. Conversely, failure to reverse SHA-1 over an undefined message space
+would say almost nothing. Until an exact preimage and derivation or independent archival
+corroboration is recovered, this remains a plausible historical lead, not a finding.
+
 ## Candidate justifications, ranked
 
 ### 1. Inherited cofactor-clearing workflow — plausible, best benign explanation
@@ -70,6 +102,10 @@ limbs. This matches the observed data very well. No located contemporary source 
 that Certicom used doubling as a randomness extractor or presentation step, and one
 doubling does not make the distribution uniform: the output family still contains at
 most as many points as the source family.
+
+The separate Solinas/NIST seed account shows that forgotten ASCII-message-plus-SHA-1
+workflows existed in the broader standards ecosystem, but supplies no direct link to
+this construction and therefore does not raise this candidate above “plausible.”
 
 ### 3. Compact multi-curve parameter storage — possible, weak evidence
 
@@ -125,6 +161,8 @@ The most defensible wording is:
 - Indexed SECG/IETF mailing-list material, standards discussions, and contemporary source
   trees.
 - Exact searches for the shared core and the secp224k1/secp256k1 source coordinate.
+- Published accounts and correspondence about the separate NIST/X9.62 seed-generation
+  process; these provide historical analogy but no Koblitz-generator attribution.
 
 No recovered source attributes the choice to an identified designer or records the
 original seed, tool, or selection transcript.

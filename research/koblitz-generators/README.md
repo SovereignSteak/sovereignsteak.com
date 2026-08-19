@@ -54,4 +54,6 @@ The exact reproduction and extension of DiSSECT's inverse-scalar trait is docume
 in `INVERSE_SCALAR_TRAITS.md`.
 
 The sourced investigation of plausible historical reasons for publishing `G=2H` is in
-`DOUBLING_RATIONALE_RESEARCH.md`.
+`DOUBLING_RATIONALE_RESEARCH.md`. It also evaluates the separate Solinas/NIST
+message-and-SHA-1 account as historical context, explicitly not as proof of the Koblitz
+generator derivation.

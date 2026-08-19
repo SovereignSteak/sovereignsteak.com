@@ -54,6 +54,14 @@ and acceptance conditions are unknown. A table miss would carry almost no eviden
 weight. Only a historically justified dictionary and message format would make a new
 SHA-1 search worthwhile.
 
+A separate account of NIST/X9.62 seed generation provides historical context, not a
+derivation. In emails published by Bernstein and Lange, Jerry Solinas recalled hashing
+a humorous ASCII message, probably with SHA-1 and a counter, but could not recover the
+exact message or method. Some other X9.62 seeds visibly embed `MinghuaQu`. These facts
+show that human-meaningful material and forgotten message-based procedures existed in
+the same standards era; no evidence connects them to the SEC k1 generator core. See
+`DOUBLING_RATIONALE_RESEARCH.md` for the source assessment and evidentiary boundary.
+
 ## Experimental evidence
 
 The primary corpus contains 2,000 exact prime-order, cofactor-one, j=0 curves from 30 to
