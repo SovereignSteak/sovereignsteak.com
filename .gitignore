@@ -11,3 +11,4 @@ __pycache__/
 !.dev.vars.example
 .DS_Store
 npm-debug.log*
+apps/workbench/
