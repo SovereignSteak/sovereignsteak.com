@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A verification report on Alpöge’s Lean formalization of the Riemann Hypothesis and its analogue for Dirichlet L-functions, with links to the theorem statements and proof-checking logs.">
+    <meta name="theme-color" content="#130f0d">
+    <title>Riemann Hypothesis in Lean · SovereignSteak</title>
+    <link rel="canonical" href="https://sovereignsteak.com/projects/alpoge-rh-lean-verification/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Playfair+Display:ital,wght@0,700;1,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <main class="article-shell">
+      <header class="article-header">
+        <a href="/projects/">All projects</a>
+        <span class="brand-mark__monogram" aria-label="SovereignSteak">SS</span>
+      </header>
+
+      <article class="research-article">
+        <header class="article-title">
+          <p class="eyebrow">Lean verification report</p>
+          <h1>Riemann <span>Hypothesis.</span></h1>
+          <p class="article-deck">The Riemann Hypothesis says that every nontrivial zero of the zeta function has real part ½. Alpöge’s Lean submission formalizes this statement and related claims for Dirichlet L-functions.</p>
+          <p><a href="https://github.com/SovereignSteak/alpoge-rh-lean-verification">Read the verification report on GitHub</a></p>
+        </header>
+
+        <aside class="result-card" aria-labelledby="status-title">
+          <strong id="status-title">Verification status</strong>
+          <p>On <time datetime="2026-11-20T19:45:00Z">20 November 2026 at 19:45 UTC</time>, Andrew Sutherland reported that all 175,187 modules compiled and passed Lean kernel replay. A second proof checker, <code>nanoda</code>, accepted the full 61.57 GB proof export. The end-to-end Comparator run was still in progress. <a href="https://math.mit.edu/~drew/grh/">Sutherland’s live verification record</a>.</p>
+        </aside>
+
+        <section>
+          <h2>Checking the theorem statements</h2>
+          <p>The first theorem uses Mathlib’s own definition of the Riemann Hypothesis. A separate local review checked the source’s provenance and confirmed that Lean treats each of the four other submitted predicates as definitionally equal to its independently written counterpart. <a href="https://raw.githubusercontent.com/leanprover-community/mathlib4/v4.33.1/Mathlib/NumberTheory/LSeries/RiemannZeta.lean">Mathlib’s definition</a> · <a href="https://alpo.ge/remark.pdf">Alpöge’s paper (PDF)</a>.</p>
+        </section>
+
+        <section>
+          <h2>What the proof checks establish</h2>
+          <p>Sutherland’s audit traced all five theorems to three standard Lean axioms, <code>propext</code>, <code>Classical.choice</code>, and <code>Quot.sound</code>. The kernel checks give evidence that the formal statements follow from those axioms under Mathlib’s definitions. <a href="https://math.mit.edu/~drew/grh/audit.log">Axiom audit</a> · <a href="https://math.mit.edu/~drew/grh/nanoda.log">Independent kernel log</a>.</p>
+          <p>Sutherland built and exported the proof outside a sandbox. At the time of his update, a hash comparison with a sandboxed build and checks of the full export by Lean’s default and paranoid kernels were still open. <a href="https://github.com/Deicyde/riemann-hypothesis">Deicyde’s independent verification setup</a>.</p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
